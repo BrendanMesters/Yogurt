@@ -23,3 +23,5 @@ Some key things from "Building a PEG parser"
 #### Day 4:
 
 Sadly the PEG parser Pegen was not yet usable for us. We encountered different errors that would be to costly to try and fix for the upsides they may bring. Thus we will now try to use the parser [Parso](https://parso.readthedocs.io/en/latest/).
+
+After a couple of hours of work trying to figure out how Parso works and playing around with it a bit we started to think of how the Yogurt grammar should look. We (Jack and myself) have come up with a simple grammar description of Yogurt. This grammar builds upon the Python grammar (specifically the `parso\python\grammar38.txt` file of Parso v0.7.0). We choose to do it like this as Yogurt will most likely look quite similar to Python, thus we can add the Yogurt specific grammar rules to the existing grammar instead of building the grammar up from scratch. We also made a mock Yogurt program so that we can test if our grammar works. (tough this will probably have to wait to another time).
