@@ -22,4 +22,4 @@ Some key things from "Building a PEG parser"
 
 #### Day 4:
 
-Sadly the PEG parser Pegen was not yet usable for us. We encountered different errors that would be to costly to try and fix for the upsides it may bring. Thus we will now try to use the parser [Parso](https://parso.readthedocs.io/en/latest/).
+Sadly the PEG parser Pegen was not yet usable for us. We encountered different errors that would be to costly to try and fix for the upsides they may bring. Thus we will now try to use the parser [Parso](https://parso.readthedocs.io/en/latest/).
