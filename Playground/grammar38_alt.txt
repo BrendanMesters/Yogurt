@@ -17,7 +17,9 @@ decorators: decorator+
 decorated: decorators (classdef | funcdef | async_funcdef)
 
 async_funcdef: 'async' funcdef
-funcdef: 'def' NAME parameters ['->' test] ':' suite
+
+# Changed 'def' into 'deff'
+funcdef: 'deff' NAME parameters ['->' test] ':' suite
 
 parameters: '(' [typedargslist] ')'
 typedargslist: (
