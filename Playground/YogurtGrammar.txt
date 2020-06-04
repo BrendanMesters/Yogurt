@@ -1,7 +1,7 @@
 # Grammar for Yogurt
 
 file_input: yogurt_stmt* ENDMARKER
-yogurt_stmt: actordef | expr_stmt | pass_stmt
+yogurt_stmt: actordef | expr_stmt | pass_stmt   # actordef | actorInstantiation | actorBind
 
 actordef: 'actor' NAME parameters ':' NEWLINE INDENT actor_suite DEDENT
 actor_suite: ['config' ':' NEWLINE [INDENT config_list DEDENT]] [
