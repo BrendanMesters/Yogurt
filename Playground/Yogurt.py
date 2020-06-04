@@ -4,7 +4,8 @@ actor switch(dblink):
     states:
         state on: "/on"
     actions:
-        self
+        trigger foobar:
+
 
 actor light(dblink, switch):
     config:

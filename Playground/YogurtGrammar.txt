@@ -4,15 +4,15 @@ file_input: yogurt_stmt* ENDMARKER
 yogurt_stmt: actordef | expr_stmt | pass_stmt
 
 actordef: 'actor' NAME parameters ':' NEWLINE INDENT actor_suite DEDENT
-actor_suite: ['config' ':' NEWLINE [INDENT config_list DEDENT]]
-            ['states' ':' NEWLINE [INDENT states_list DEDENT]]
-            ['actions' ':' NEWLINE [INDENT actions_list DEDENT]]
-config_list: 
+actor_suite: ['config' ':' NEWLINE [INDENT config_list DEDENT]] [
+            'states' ':' NEWLINE [INDENT states_list DEDENT]] [
+            'actions' ':' NEWLINE [INDENT actions_list DEDENT]]
+config_list: pass_stmt #until we figure out what it should contain
 states_list: ('state' NAME ':' STRING NEWLINE)+
 actions_list: ('trigger' trigger_expr ':' NEWLINE INDENT action_suite DEDENT)+
 
-action_suite: ((expr_stmt | guard_list) NEWLINE )+
-                ['then' ':' NEWLINE INDENT action_suite DEDENT]
+action_suite: [((expr_stmt | guard_list) NEWLINE ) + [
+                'then' ':' NEWLINE INDENT action_suite DEDENT]] #MADE OPTIONAL< CARE
 
 
 
@@ -21,7 +21,7 @@ guard_list: when_stmt+ ['else' ':' NEWLINE INDENT action_suite DEDENT]
 
 when_stmt: 'when' when_expr ':' NEWLINE INDENT action_suite DEDENT
 
-when_epxr: expr
+when_expr: expr
 
 # /Grammar for Yogurt
 

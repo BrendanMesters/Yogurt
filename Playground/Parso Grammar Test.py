@@ -9,16 +9,16 @@ def printParseTree(tree, indent = 0):
             printParseTree(node, indent + 1)
 
 
-with open("grammar38.txt") as f:
+with open("YogurtGrammar.txt") as f:
     bnf_text = f.read()
 
 grammar = parso.grammar.PythonGrammar(parso.grammar.parse_version_string("3.8"), bnf_text)
 
-with open("Hello_world.py") as f:
+with open("Yogurt.py") as f:
     program_text = f.read()
 
 parseTree = grammar.parse(program_text)
-foo = parseTree.children
+#foo = parseTree.children
 
 
 printParseTree(parseTree)
