@@ -30,4 +30,4 @@ After a couple of hours of work trying to figure out how Parso works and playing
 #### Day 5:
 
 We didn't work much on Yogurt, mostly just brainstormed, this did however make us realize that the top level obejects should probably be limmited and expressed, aka: `actor Actorname()`; `initialize varName: Actorname "database path"`; `bind varName(args*)`.
-At this moment we believe these to be the 3 imporant top level specifications. Lateron this may include a `python` object to indicate pythoncode, tough this may be done differently. 
+At this moment we believe these to be the 3 imporant top level specifications. Lateron this may include a `python` object to indicate pythoncode, tough this may be done differently.s 

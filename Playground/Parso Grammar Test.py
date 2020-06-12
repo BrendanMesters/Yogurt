@@ -12,7 +12,7 @@ def printParseTree(tree, indent = 0):
 with open("YogurtGrammar.txt") as f:
     bnf_text = f.read()
 
-grammar = parso.grammar.PythonGrammar(parso.grammar.parse_version_string("3.8"), bnf_text)
+grammar = parso.grammar.YogurtGrammar(parso.grammar.parse_version_string("3.8"), bnf_text)
 
 with open("Yogurt.py") as f:
     program_text = f.read()
