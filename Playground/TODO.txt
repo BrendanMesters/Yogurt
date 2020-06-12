@@ -1,0 +1,6 @@
+Things to do:
+    - Look at `ErrorFinder(Normalizer)` in the errors.py class
+        The errorfinder seems to be used to traverse the AST with a self made scope
+        to check wether there are errors present that would've gotten past the parsing.
+        I should make sure that this is also a correct error finder for Yogurt
+        and change it if that is not the case.

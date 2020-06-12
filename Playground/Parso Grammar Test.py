@@ -14,6 +14,9 @@ with open("YogurtGrammar.txt") as f:
 
 grammar = parso.grammar.YogurtGrammar(parso.grammar.parse_version_string("3.8"), bnf_text)
 
+#TODO
+#ERROR FINDER!~
+
 with open("Yogurt.py") as f:
     program_text = f.read()
 

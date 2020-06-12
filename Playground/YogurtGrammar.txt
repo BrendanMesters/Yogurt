@@ -1,7 +1,7 @@
 # Grammar for Yogurt
 
 file_input: yogurt_stmt* ENDMARKER
-yogurt_stmt: actordef | expr_stmt | pass_stmt   # actordef | actorInstantiation | actorBind
+yogurt_stmt: actordef | expr_stmt | pass_stmt | funcdef   # actordef | actorInstantiation | actorBind
 
 actordef: 'actor' NAME parameters ':' NEWLINE INDENT actor_suite DEDENT
 actor_suite: ['config' ':' NEWLINE [INDENT config_list DEDENT]] [
@@ -39,11 +39,6 @@ single_input: NEWLINE | simple_stmt | compound_stmt NEWLINE
 # (python) file_input: stmt* ENDMARKER
 eval_input: testlist NEWLINE* ENDMARKER
 
-decorator: '@' dotted_name [ '(' [arglist] ')' ] NEWLINE
-decorators: decorator+
-decorated: decorators (classdef | funcdef | async_funcdef)
-
-async_funcdef: 'async' funcdef
 funcdef: 'def' NAME parameters ['->' test] ':' suite
 
 
@@ -107,7 +102,7 @@ global_stmt: 'global' NAME (',' NAME)*
 nonlocal_stmt: 'nonlocal' NAME (',' NAME)*
 assert_stmt: 'assert' test [',' test]
 
-compound_stmt: if_stmt | while_stmt | for_stmt | try_stmt | with_stmt | funcdef | classdef | decorated | async_stmt
+compound_stmt: if_stmt | while_stmt | for_stmt | try_stmt | with_stmt | funcdef | async_stmt
 async_stmt: 'async' (funcdef | with_stmt | for_stmt)
 if_stmt: 'if' namedexpr_test ':' suite ('elif' namedexpr_test ':' suite)* ['else' ':' suite]
 while_stmt: 'while' namedexpr_test ':' suite ['else' ':' suite]
@@ -160,8 +155,6 @@ dictorsetmaker: ( ((test ':' test | '**' expr)
                    (comp_for | (',' (test ':' test | '**' expr))* [','])) |
                   ((test | star_expr)
                    (comp_for | (',' (test | star_expr))* [','])) )
-
-classdef: 'class' NAME ['(' [arglist] ')'] ':' suite
 
 arglist: argument (',' argument)*  [',']
 
